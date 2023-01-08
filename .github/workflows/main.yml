@@ -44,6 +44,7 @@ jobs:
       - name: Setup kubeconfig
         run: |
           kubectl config use-context kind-kind
+          sleep 600
           kubectl get namespaces
      # echo ${{secrets.KUBE_CONFIG}} | base64 --decode
      # mkdir $HOME/.kube
