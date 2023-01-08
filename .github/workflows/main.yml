@@ -20,7 +20,7 @@ jobs:
         env: 
           SUPER_SECRET: ${{secrets.KUBE_CONFIG}}
         run: |
-          echo "$SUPER_SECRET" |  base64 --decode
+          echo "$SUPER_SECRET" |  base64 --decode > $HOME/.kube/config
       # Runs a single command using the runners shell
       - name: Install Helm
         run: |
@@ -43,6 +43,8 @@ jobs:
       - name: Setup kubeconfig
         run: |
           mkdir $HOME/.kube
+          kubectl config use-context kind-kind
+          kubectl get namespaces
      # echo ${{secrets.KUBE_CONFIG}} | base64 --decode
      # mkdir $HOME/.kube
      #     echo ${{secrets.KUBE_CONFIG}} | base64 --decode > $HOME/.kube/config
