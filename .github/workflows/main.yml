@@ -53,14 +53,8 @@ jobs:
           docker build --tag bash-app .
           
       # Build and test App Docker Image
-#     # - name: Deploy Go App to Kubernetes with kubectl
-#     #   run: |
-#     #     kubectl apply -f k8s/go-app/go-app-kubernetes-namespace.yml
-#     #     kubectl apply -f k8s/go-app/go-app-kubernetes.yml
+      - name: Deploy Go App to Kubernetes with kubectl
+        run: |
+          kubectl apply -f bashAppK8s/app-kubernetes-namespace.yml
+          kubectl apply -f bashAppK8s/app-kubernetes.yml
 
-      # Build and test App Docker Image
-      #- name: Deploy Go App to Kubernetes with Helm   
-      #  run: |
-      #    cd   helm/Go_App/go-app-kubernetes
-      #    helm upgrade --install go-app-kubernetes .  --namespace nexo-app-db --create-namespace --atomic
-          
