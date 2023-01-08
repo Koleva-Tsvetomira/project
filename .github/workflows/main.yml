@@ -50,7 +50,7 @@ jobs:
       - name: Build and test App Docker Image
         run: |
           cd bashApp/
-          docker build --tag tsveti-app-kubernetes .
+          docker build --tag bash-app .
           
       # Build and test App Docker Image
 #     # - name: Deploy Go App to Kubernetes with kubectl
