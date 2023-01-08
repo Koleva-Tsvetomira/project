@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bash-app
+  namespace: bash-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bash-app
+  template:
+    metadata:
+      labels:
+        app: bash-app
+    spec:
+      containers:
+        - name: bash-app
+          image: bash:latest
+          imagePullPolicy: "IfNotPresent"
+          command: ["/bin/sh"]
+          args: ["-c", "while true; do echo -e "HTTP/1.1 200 OK\n\n$(echo 'Hello World')" | nc -l -k -p 8080 -q 1; done"]
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bash-app-svc
+  namespace: bash-app
+  labels:
+    app: bash-app
+spec:
+  type: NodePort
+  ports:
+   - port: 8080
+  selector:
+   app: bash-app
