@@ -45,20 +45,12 @@ jobs:
         run: |
           kubectl config use-context kind-kind
           kubectl get namespaces
-     # echo ${{secrets.KUBE_CONFIG}} | base64 --decode
-     # mkdir $HOME/.kube
-     #     echo ${{secrets.KUBE_CONFIG}} | base64 --decode > $HOME/.kube/config
-     #     kubectl config use-context kind-kind
-     # - name: Test kubeconfig
-     #   run: |
-     #     ls -l
-     #     kubectl get namespaces
   
       # Build and test App Docker Image
-      #- name: Build and test App Docker Image
-      #  run: |
-      #    cd GolangAppKubernetes/
-      #    docker build --tag nexo-app-kubernetes .
+      - name: Build and test App Docker Image
+        run: |
+          cd bashApp/
+          docker build --tag tsveti-app-kubernetes .
           
       # Build and test App Docker Image
 #     # - name: Deploy Go App to Kubernetes with kubectl
