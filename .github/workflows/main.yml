@@ -38,7 +38,8 @@ jobs:
           sudo apt-get install -y kubectl
       - name: Setup kubeconfig
         run: |
-          echo ${{secrets.KUBE_CONFIG}} | base64 --decode
+          mkdir $HOME/.kube
+     # echo ${{secrets.KUBE_CONFIG}} | base64 --decode
      # mkdir $HOME/.kube
      #     echo ${{secrets.KUBE_CONFIG}} | base64 --decode > $HOME/.kube/config
      #     kubectl config use-context kind-kind
