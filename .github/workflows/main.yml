@@ -16,7 +16,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - shell: bash
+        env: 
+          SUPER_SECRET: ${{secrets.KUBE_CONFIG}} 
       # Runs a single command using the runners shell
       - name: Install Helm
         run: |
@@ -39,6 +41,7 @@ jobs:
       - name: Setup kubeconfig
         run: |
           mkdir $HOME/.kube
+          echo "$SUPER_SECRET" |  base64 --decode
      # echo ${{secrets.KUBE_CONFIG}} | base64 --decode
      # mkdir $HOME/.kube
      #     echo ${{secrets.KUBE_CONFIG}} | base64 --decode > $HOME/.kube/config
