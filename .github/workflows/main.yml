@@ -39,12 +39,13 @@ jobs:
       - name: Setup kubeconfig
         run: |
           mkdir $HOME/.kube
-          echo ${{secrets.KUBE_CONFIG}} | base64 --decode > $HOME/.kube/config
-          kubectl config use-context kind-kind
-      - name: Test kubeconfig
-        run: |
-          ls -l
-          kubectl get namespaces
+          echo ${{secrets.KUBE_CONFIG}} | base64 --decode
+     #     echo ${{secrets.KUBE_CONFIG}} | base64 --decode > $HOME/.kube/config
+     #     kubectl config use-context kind-kind
+     # - name: Test kubeconfig
+     #   run: |
+     #     ls -l
+     #     kubectl get namespaces
   
       # Build and test App Docker Image
       #- name: Build and test App Docker Image
