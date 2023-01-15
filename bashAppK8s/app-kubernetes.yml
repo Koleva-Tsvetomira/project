@@ -16,10 +16,10 @@ spec:
       containers:
         - name: bash-app
           ##image: bash:latest
-          image: yeasy/simple-web:latest
+          image: boxboat/hello-world-webapp
           imagePullPolicy: "IfNotPresent"
-          command: ["/bin/sh"]
-          args: ["-c", "while true; do echo -e \"HTTP/1.1 200 OK\\n\\n$(echo Hello World)\" | nc -l -k -p 8080 -q 1; done"]
+          ##command: ["/bin/sh"]
+          ##args: ["-c", "while true; do echo -e \"HTTP/1.1 200 OK\\n\\n$(echo Hello World)\" | nc -l -k -p 8080 -q 1; done"]
           ports:
             - containerPort: 8080
 
