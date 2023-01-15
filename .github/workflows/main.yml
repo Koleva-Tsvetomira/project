@@ -53,7 +53,7 @@ jobs:
           docker build --tag bash-app .
           
       # Build and test App Docker Image
-      - name: Deploy Go App to Kubernetes with kubectl
+      - name: Deploy Web App to Kubernetes with kubectl
         run: |
           kubectl apply -f bashAppK8s/app-kubernetes-namespace.yml
           kubectl apply -f bashAppK8s/app-kubernetes.yml
