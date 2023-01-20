@@ -1,3 +1,7 @@
+Prepare local environment to start the project.
+
+
+
 Pipeline in GitHub Actions successful build.  
 
 ![image](https://user-images.githubusercontent.com/116017825/213773774-377fec63-d644-475d-a8ec-1f8852d6e341.png)
