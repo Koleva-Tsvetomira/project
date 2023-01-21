@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bash-app
-  namespace: bash-app
+  name: nginx-app
+  namespace: nginx-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bash-app
+      app: nginx-app
   template:
     metadata:
       labels:
-        app: bash-app
+        app: nginx-app
     spec:
       containers:
-        - name: bash-app
-          image: bash:latest
-          #image: nginx
+        - name: nginx-app
+          #image: bash:latest
+          image: nginx
           imagePullPolicy: "IfNotPresent"
-          command: ["/bin/sh"]
-          args: ["-c", "while true; do echo -e \"HTTP/1.1 200 OK\\n\\n$(echo Hello World)\" | nc -l -k -p 8081 -q 1; done"]
+          #command: ["/bin/sh"]
+          #args: ["-c", "while true; do echo -e \"HTTP/1.1 200 OK\\n\\n$(echo Hello World)\" | nc -l -k -p 8080 -q 1; done"]
           ports:
             - containerPort: 80
 
