@@ -1,8 +1,11 @@
-services:
-  nginx:
-    image: nginx:latest
-    ports:
-      - 8080:80
+FROM bash
 
-docker-compose up
-http://localhost:8080
+WORKDIR /app
+
+COPY web.sh ./
+
+RUN chmod +x web.sh
+
+EXPOSE 8080
+
+CMD [ "sh", "-c", "./web.sh" ]
