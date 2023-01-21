@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: bash-app
+  name: nginx-app
   labels:
-    name: bash-app
+    name: nginx-app
