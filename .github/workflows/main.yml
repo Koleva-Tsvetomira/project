@@ -50,7 +50,7 @@ jobs:
       - name: Build and test App Docker Image
         run: |
           cd bashApp/
-          docker build --tag bash-app .
+          docker build --tag nginx-app .
           
       # Build and test App Docker Image
       - name: Deploy Web App to Kubernetes with kubectl
