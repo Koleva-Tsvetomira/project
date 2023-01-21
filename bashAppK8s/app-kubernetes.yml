@@ -21,7 +21,7 @@ spec:
           command: ["/bin/bash", "-c"]
           args: ["while true; do echo 'Hello, World!' | nc -l -p 8080; done"]
           ports:
-            - containerPort: 8080
+            - containerPort: 80
 
 ---
 
@@ -35,6 +35,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-   - port: 8080
+   - port: 80
   selector:
    app: bash-app
