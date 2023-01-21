@@ -28,13 +28,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bash-app-svc
-  namespace: bash-app
+  name: nginx-app-svc
+  namespace: nginx-app
   labels:
-    app: bash-app
+    app: nginx-app
 spec:
   type: NodePort
   ports:
    - port: 80
   selector:
-   app: bash-app
+   app: nginx-app
