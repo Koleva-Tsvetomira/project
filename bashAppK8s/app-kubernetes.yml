@@ -18,7 +18,7 @@ spec:
           image: alpine:3.12
           #image: nginx
           imagePullPolicy: "IfNotPresent"
-          command: ['/bin/sh']
+          command: ["/bin/sh"]
           args: ["-c", "["while true; do echo 'Hello, World!' | nc -l -p 8080; done"]
           ports:
             - containerPort: 8080
