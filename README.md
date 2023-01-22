@@ -1,4 +1,14 @@
+
+
 1.Prepare local environment to start the project.
+
+Install Docker Desktop: https://www.docker.com/products/docker-desktop/
+
+Install Lens Desktop App: https://k8slens.dev/
+
+Install kind locally and connect the kind cluster to Lens: https://kind.sigs.k8s.io/docs/user/configuration/
+
+Configure GitHub Actions Self-Hosted Runner on K8s: https://medium.com/nerd-for-tech/github-actions-self-hosted-runner-on-kubernetes-55d077520a31
 
 
 
