@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
         - name: bash-app
-          image: alpine:3.12
-          #image: nginx
+          #image: alpine:3.12
+          image: nginx
           imagePullPolicy: "IfNotPresent"
           command: ["/bin/bash", "-c"]
           args: ["while true; do echo 'Hello, World!' | nc -l -p 8080; done"]
